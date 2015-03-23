@@ -76,11 +76,18 @@ namespace Server
                             networkStream.Flush();
                         }
                     }
-                    else //C'est Export
+                    if (dataFromClientok == "export") //C'est Export
                     {
                         string FormatExport = spliter[1];
                         string NomduFichier = spliter[2];
                         System.Diagnostics.Process.Start(@"C:\Users\talend\Desktop\Jobs\export\ExportChouetteNeptune\ExportChouetteNeptune_run.bat", "--context_param FormatExport=" + FormatExport + " --context_param NameExport=" + NomduFichier+".zip");
+                        Byte[] DataAEnvoyer = Encoding.ASCII.GetBytes("ok$");
+                        networkStream.Write(DataAEnvoyer, 0, DataAEnvoyer.Length);
+                        networkStream.Flush();
+                    }
+                    if (dataFromClientok == "MEP") //C'est La mise en Prod
+                    {
+                        System.Diagnostics.Process.Start(@"C:\Users\talend\Desktop\Jobs\import\Hastus2Chouette\Hastus2Chouette_run.bat", "--context_param DateDebut=" + DateDebut + " --context_param nbJours=" + nbJours);
                         Byte[] DataAEnvoyer = Encoding.ASCII.GetBytes("ok$");
                         networkStream.Write(DataAEnvoyer, 0, DataAEnvoyer.Length);
                         networkStream.Flush();

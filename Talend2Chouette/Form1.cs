@@ -161,5 +161,37 @@ namespace Talend2Chouette
         {
             clientSocket.Close();
         }
+
+        private void Chk_Confirme_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Chk_Confirme.Checked == true) {
+                Btn_MiseEnProd.Enabled = true;
+            }
+            else
+            {
+                Btn_MiseEnProd.Enabled = false;
+            }
+        }
+
+        private void Btn_MiseEnProd_Click(object sender, EventArgs e)
+        {
+            NetworkStream serverStream = clientSocket.GetStream();
+            byte[] outStream = System.Text.Encoding.ASCII.GetBytes("MEP$");
+            serverStream.Write(outStream, 0, outStream.Length);
+            serverStream.Flush();
+
+            byte[] bytesFrom = new byte[10025];
+            serverStream.Read(bytesFrom, 0, Convert.ToInt32(clientSocket.ReceiveBufferSize));
+            string dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
+            string dataFromClientok = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
+            if (dataFromClientok == "ok")
+            {
+                MessageBox.Show("La mise en production est en cours.", "Super !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Il y'a un problème avec la mise en production !", "Attention !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -62,6 +62,15 @@
             this.progressExport = new System.Windows.Forms.ProgressBar();
             this.Btn_ValideExport = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Chk_Confirme = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Btn_MiseEnProd = new System.Windows.Forms.Button();
             this.ImportationTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,12 +78,15 @@
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImportationTab
             // 
             this.ImportationTab.Controls.Add(this.tabPage1);
             this.ImportationTab.Controls.Add(this.tabPage2);
+            this.ImportationTab.Controls.Add(this.tabPage3);
             this.ImportationTab.Location = new System.Drawing.Point(12, 12);
             this.ImportationTab.Name = "ImportationTab";
             this.ImportationTab.SelectedIndex = 0;
@@ -416,6 +428,100 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Format d\'export :";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(425, 249);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Mise en Production";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.Chk_Confirme);
+            this.groupBox5.Controls.Add(this.label14);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.Btn_MiseEnProd);
+            this.groupBox5.Location = new System.Drawing.Point(6, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(413, 237);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = " ";
+            // 
+            // Chk_Confirme
+            // 
+            this.Chk_Confirme.AutoSize = true;
+            this.Chk_Confirme.Location = new System.Drawing.Point(127, 132);
+            this.Chk_Confirme.Name = "Chk_Confirme";
+            this.Chk_Confirme.Size = new System.Drawing.Size(209, 17);
+            this.Chk_Confirme.TabIndex = 6;
+            this.Chk_Confirme.Text = "Cochez moi pour dévérouiller le bouton";
+            this.Chk_Confirme.UseVisualStyleBackColor = true;
+            this.Chk_Confirme.CheckedChanged += new System.EventHandler(this.Chk_Confirme_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(124, 63);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(187, 13);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "- La mise en production est irréversible";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(124, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(247, 13);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "- La base de \"Production\" actuelle sera supprimée.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(124, 33);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "- Une \"Pré-Prod\" doit exister.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Voici les détails :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(338, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Pour la mise en Production, cliquer sur le bouton \"Mise en Production\"";
+            // 
+            // Btn_MiseEnProd
+            // 
+            this.Btn_MiseEnProd.Enabled = false;
+            this.Btn_MiseEnProd.Location = new System.Drawing.Point(6, 155);
+            this.Btn_MiseEnProd.Name = "Btn_MiseEnProd";
+            this.Btn_MiseEnProd.Size = new System.Drawing.Size(401, 38);
+            this.Btn_MiseEnProd.TabIndex = 0;
+            this.Btn_MiseEnProd.Text = "- Mise En Production -";
+            this.Btn_MiseEnProd.UseVisualStyleBackColor = true;
+            this.Btn_MiseEnProd.Click += new System.EventHandler(this.Btn_MiseEnProd_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +546,9 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -479,6 +588,15 @@
         private System.Windows.Forms.TextBox Txt_Filename;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Btn_OpenExport;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button Btn_MiseEnProd;
+        private System.Windows.Forms.CheckBox Chk_Confirme;
+        private System.Windows.Forms.Label label14;
     }
 }
 
